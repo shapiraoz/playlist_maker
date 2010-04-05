@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListMusicMaker", "ListMusicMaker\ListMusicMaker.csproj", "{A892CEA1-204D-4D0B-B22C-784D503E6D84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreListMaker", "CoreListMaker\CoreListMaker.csproj", "{3F860B9F-A2CA-4BE0-B9C1-3B25D14E775B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListMusicMakerCLI", "ListMusicMakerCLI\ListMusicMakerCLI.csproj", "{9F6DFC51-BF08-493E-BEF1-ED57256521A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A892CEA1-204D-4D0B-B22C-784D503E6D84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A892CEA1-204D-4D0B-B22C-784D503E6D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A892CEA1-204D-4D0B-B22C-784D503E6D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A892CEA1-204D-4D0B-B22C-784D503E6D84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F860B9F-A2CA-4BE0-B9C1-3B25D14E775B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F860B9F-A2CA-4BE0-B9C1-3B25D14E775B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F860B9F-A2CA-4BE0-B9C1-3B25D14E775B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F860B9F-A2CA-4BE0-B9C1-3B25D14E775B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F6DFC51-BF08-493E-BEF1-ED57256521A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F6DFC51-BF08-493E-BEF1-ED57256521A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F6DFC51-BF08-493E-BEF1-ED57256521A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F6DFC51-BF08-493E-BEF1-ED57256521A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
