@@ -39,6 +39,7 @@
     <Compile Include="Amake.cs" />
     <Compile Include="IServiceMake.cs" />
     <Compile Include="M3uMake.cs" />
+    <Compile Include="PlayListMaker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WplMake.cs" />
   </ItemGroup>

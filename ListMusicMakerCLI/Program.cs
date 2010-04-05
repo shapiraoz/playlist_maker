@@ -12,11 +12,13 @@ namespace ListMusicMakerCLI
         
         static void Main(string[] args)
         {
-            WplMake w1 = new WplMake(args[0]);
-            w1.ServiceFunc = new ServiceFuncCLI();
-            w1.ReadData();
-            w1.CreateFolderOutPut(args[1]);
-            w1.CopyAllFiles();
+            PlayListMakerCLI playlistMakerCLI = new PlayListMakerCLI(args[0], args[1]);
+            playlistMakerCLI.GO();
+            //WplMake w1 = new WplMake(args[0]);
+            //w1.ServiceFunc = new ServiceFuncCLI();
+            //w1.ReadData();
+            //w1.CreateFolderOutPut(args[1]);
+            //w1.CopyAllFiles();
             //M3uMake m1 = new M3uMake(args[0]);
             //m1.ServiceFunc = new ServiceFuncCLI();
             //m1.ReadData();
