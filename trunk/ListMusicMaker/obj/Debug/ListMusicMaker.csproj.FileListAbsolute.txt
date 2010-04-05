@@ -1,7 +1,0 @@
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMaker\obj\Debug\ResolveAssemblyReference.cache
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMaker\obj\Debug\ListMusicMaker.Properties.Resources.resources
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMaker\obj\Debug\ListMusicMaker.csproj.GenerateResource.Cache
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMaker\bin\Debug\ListMusicMaker.exe
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMaker\bin\Debug\ListMusicMaker.pdb
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMaker\obj\Debug\ListMusicMaker.exe
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMaker\obj\Debug\ListMusicMaker.pdb

@@ -1,7 +1,0 @@
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMakerCLI\obj\Debug\ResolveAssemblyReference.cache
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMakerCLI\bin\Debug\ListMusicMakerCLI.exe
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMakerCLI\bin\Debug\ListMusicMakerCLI.pdb
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMakerCLI\bin\Debug\CoreListMaker.dll
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMakerCLI\bin\Debug\CoreListMaker.pdb
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMakerCLI\obj\Debug\ListMusicMakerCLI.exe
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\ListMusicMakerCLI\obj\Debug\ListMusicMakerCLI.pdb
