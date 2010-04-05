@@ -36,12 +36,9 @@ namespace CoreListMaker
                 for (int i = 2; i < allContentArr.Length; i+=3)
                 {
                     string temp = allContentArr[i];
-                    Match fileName = FILE_NAME_FORMAT.Match(temp);
                     MatchCollection newS = END.Matches(temp, 0);
-
                     int lastEnd = newS[newS.Count - 1].Index + 1;
-                    temp.Substring(lastEnd, temp.Length - 1);
-                   m_FilesList.Add(allContentArr[i]);   
+                    m_FilesList.Add(temp.Substring(lastEnd, temp.Length - 1));   
                 }
             }
             

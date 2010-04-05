@@ -1,5 +1,0 @@
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\CoreListMaker\obj\Debug\ResolveAssemblyReference.cache
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\CoreListMaker\bin\Debug\CoreListMaker.dll
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\CoreListMaker\bin\Debug\CoreListMaker.pdb
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\CoreListMaker\obj\Debug\CoreListMaker.dll
-E:\My Doc\Visual Studio 2008\Projects\ListMusicMaker\CoreListMaker\obj\Debug\CoreListMaker.pdb

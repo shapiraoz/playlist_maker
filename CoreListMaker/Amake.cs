@@ -37,13 +37,12 @@ namespace CoreListMaker
                     temps = temps.Contains("[") ? temps.Replace('[', '(') : temps;
                     temps = temps.Contains("]") ? temps.Replace(']', ')') : temps;
                     Match fileName = FILE_NAME_FORMAT.Match(temps);
-                    MatchCollection newS = END.Matches(s, 0);
+                                     
                    
-                    int lastEnd = newS[newS.Count - 1].Index+1;
                     try
                     {
 
-                        File.Copy(s.Substring(lastEnd, temps.Length - 1), Directory.GetCurrentDirectory() + "\\" + m_targetPath + "\\" + fileName.ToString(), true);
+                        File.Copy(s, Directory.GetCurrentDirectory() + "\\" + m_targetPath + "\\" + fileName.ToString(), true);
                         m_ServiceFunc.PrintResult(COPY_FILE_MSG + fileName.ToString());
                     }
                     catch (System.IO.FileNotFoundException ex)
