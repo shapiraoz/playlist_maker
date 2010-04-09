@@ -11,7 +11,9 @@ namespace CoreListMaker
     public class Amake
     {
         const string COPY_FILE_MSG = "copying file :";
-
+        const string CANT_COPY_MSG = "error can't copy file : ";
+        const string ERR_MSG_TARGET_NOT_FONUD = "internal Error: target not init";
+        
         public virtual void ReadData()
         {
            
@@ -27,7 +29,7 @@ namespace CoreListMaker
         
         public void CopyAllFiles()
         {
-            if (m_targetPath.Length == 0) throw (new Exception("internal Error: target not init"));
+            if (m_targetPath.Length == 0) throw (new Exception(ERR_MSG_TARGET_NOT_FONUD));
             
             else
             {
@@ -38,7 +40,6 @@ namespace CoreListMaker
                     temps = temps.Contains("]") ? temps.Replace(']', ')') : temps;
                     Match fileName = FILE_NAME_FORMAT.Match(temps);
                                      
-                   
                     try
                     {
 
@@ -47,15 +48,15 @@ namespace CoreListMaker
                     }
                     catch (System.IO.FileNotFoundException ex)
                     {
-
+                        m_ServiceFunc.PrintResult(CANT_COPY_MSG+ex.Message);
                     }
                     catch (System.IO.DirectoryNotFoundException ex1)
                     {
-
+                        m_ServiceFunc.PrintResult(CANT_COPY_MSG + ex1.Message);
                     }
                     catch (System.UnauthorizedAccessException ex2)
                     {
-
+                        m_ServiceFunc.PrintResult(CANT_COPY_MSG + ex2.Message);
                     }
 
                }
