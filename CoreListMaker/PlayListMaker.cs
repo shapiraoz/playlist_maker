@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Reflection;
 
 namespace CoreListMaker
 {
@@ -9,6 +10,7 @@ namespace CoreListMaker
     {
         const string ERR_MSG_PATH_NOT_FILED = "playlist file not empty";
         const string ERR_MSG_NOT_RIGHT_EXT = "incorrect file extention";
+        const string MSG_COPY_FILES = "copying all files....(will take a while)";
 
         public PlayListMaker(string filePath, string newFolderName)
         {
@@ -33,9 +35,23 @@ namespace CoreListMaker
             {
                 m_CoreMake.ReadData();
                 m_CoreMake.CreateFolderOutPut(m_newFolderName);
+                m_CoreMake.ServiceFunc.PrintResult(MSG_COPY_FILES);
                 m_CoreMake.CopyAllFiles();
             }
 
+        }
+        protected string GetVersion()
+        {
+            Assembly assembly = Assembly.GetEntryAssembly();
+            AssemblyVersionAttribute[] attributes =
+                assembly.GetCustomAttributes(typeof(AssemblyVersionAttribute), false)
+                    as AssemblyVersionAttribute[];
+
+            if (attributes != null && attributes.Length == 1)
+            {
+                return attributes[0].Version;
+            }
+            else return null;
         }
 
         protected Amake m_CoreMake;
