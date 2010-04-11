@@ -27,6 +27,7 @@ namespace ListMusicMaker
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.DefaultExt = "*.m3u ,*.wpl";
             dlg.Filter = "m3u list file(*.m3u) |*.m3u| wpl list file (*.wpl)|*.wpl";
+            dlg.Title = "Choose Wpl or m3u file ";
             DialogResult result =  dlg.ShowDialog();
 
             switch (result)
@@ -34,14 +35,21 @@ namespace ListMusicMaker
                 case DialogResult.None:
                 break;
                 case DialogResult.OK:
+                if (dlg.CheckFileExists)
+                {
+                    m_path = dlg.FileName;
                     m_ListFilelabel.Text = dlg.FileName;
-                break;
+                }
+               break;
                     
             }
 
-
+           
 
             
         }
+        private PlayListmakerApp m_PlayListMaker;
+        private string m_path;
+        private string m_newFolderName;
     }
 }
