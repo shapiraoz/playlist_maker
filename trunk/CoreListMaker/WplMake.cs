@@ -9,7 +9,7 @@ namespace CoreListMaker
 {
     public class WplMake:Amake
     {
-        public WplMake(string filePath)
+        public WplMake(string filePath):base(filePath)
         {
             
             if (!File.Exists(filePath)) throw (new Exception("Error:file not exist"));

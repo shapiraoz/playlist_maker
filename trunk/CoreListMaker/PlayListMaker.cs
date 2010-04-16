@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Reflection;
+using System.IO;
 
 namespace CoreListMaker
 {
@@ -14,13 +15,13 @@ namespace CoreListMaker
 
         public PlayListMaker(string filePath, string newFolderName)
         {
-            if (m_m3uExtension.IsMatch(filePath))
+            if (m_m3uPath.IsMatch(filePath))
             {
                 m_CoreMake = new M3uMake(filePath);
             }
             else
             {
-                m_CoreMake =(m_wplExtension.IsMatch(filePath))? new WplMake(filePath) : null;    
+                m_CoreMake =(m_wplPath.IsMatch(filePath))? new WplMake(filePath) : null;    
             }
             if (m_CoreMake == null) throw (new  Exception(ERR_MSG_PATH_NOT_FILED)) ;
             
@@ -55,10 +56,10 @@ namespace CoreListMaker
         }
 
         protected Amake m_CoreMake;
-        protected Regex m_m3uExtension = new Regex("[:a-zA-Z0-9א-ת_\\ ]+.[mM]3[uU]$");
-        protected Regex m_wplExtension = new Regex("[:a-zA-Z0-9א-ת_\\ ]+.[Ww][Pp][Ll]$");
-
+        protected Regex m_m3uPath = new Regex("[:a-zA-Z0-9א-ת_\\ ]+.[mM]3[uU]$");
+        protected Regex m_wplPath = new Regex("[:a-zA-Z0-9א-ת_\\ ]+.[Ww][Pp][Ll]$");
         private string m_filePath;
+        private string m_folderPath;
         private string m_newFolderName;
     }
 }

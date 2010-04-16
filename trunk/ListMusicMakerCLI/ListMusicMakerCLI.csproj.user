@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <StartWorkingDirectory>E:\My Doc\My Music\My Playlists\</StartWorkingDirectory>
-    <StartArguments>s_Full.wpl Z1</StartArguments>
+    <StartArguments>"E:\My Doc\My Music\My Playlists\s_Full.wpl" Z1</StartArguments>
   </PropertyGroup>
 </Project>

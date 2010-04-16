@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 
 using System.Text;
@@ -17,6 +18,13 @@ namespace CoreListMaker
         public virtual void ReadData()
         {
            
+        }
+        
+        public Amake(string filePath)
+        {
+            m_filePath = filePath;
+            FileInfo f = new FileInfo(filePath);
+            m_mainDirPath = f.Directory.FullName;
         }
 
         public void CreateFolderOutPut(string Path)
@@ -43,7 +51,7 @@ namespace CoreListMaker
                     try
                     {
 
-                        File.Copy(s, Directory.GetCurrentDirectory() + "\\" + m_targetPath + "\\" + fileName.ToString(), true);
+                        File.Copy(m_mainDirPath + "\\" + s, m_mainDirPath + "\\" + m_targetPath + "\\" + fileName.ToString(), true);
                         m_ServiceFunc.PrintResult(COPY_FILE_MSG + fileName.ToString());
                     }
                     catch (System.IO.FileNotFoundException ex)
@@ -67,7 +75,8 @@ namespace CoreListMaker
         protected string m_targetPath;
         protected Regex FILE_NAME_FORMAT = new Regex("[A-Za-z0-9 -. א-ת ()]+.[flacMmPp3]$");
         protected Regex END = new Regex("[\n\r]");
-        
+        protected string m_filePath;
+        protected string m_mainDirPath; 
         private IServiceMake m_ServiceFunc;
         public IServiceMake ServiceFunc
         {
