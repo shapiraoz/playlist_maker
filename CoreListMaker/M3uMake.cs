@@ -11,7 +11,7 @@ namespace CoreListMaker
     public class M3uMake : Amake
     {
         
-        public M3uMake(string filePath)
+        public M3uMake(string filePath):base(filePath)
         {
             if (!File.Exists(filePath)) throw (new Exception("Error:file not exist"));
             else 
