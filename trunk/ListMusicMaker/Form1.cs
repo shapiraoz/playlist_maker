@@ -14,13 +14,19 @@ namespace ListMusicMaker
     {
         public MainForm()
         {
-            
             InitializeComponent();
+            m_PlayListMaker = new PlayListmakerApp(m_viewFilesrichTextBox);
+            m_backgroundWorker.DoWork += new DoWorkEventHandler(Bw_DoWork);
+            
+
         }
 
         private void m_GObutton_Click(object sender, EventArgs e)
         {
-
+            if (!m_backgroundWorker.IsBusy)
+            {
+                m_backgroundWorker.RunWorkerAsync();
+            }
         }
 
         private void m_FindListbutton_Click(object sender, EventArgs e)
@@ -38,19 +44,35 @@ namespace ListMusicMaker
                 case DialogResult.OK:
                 if (dlg.CheckFileExists)
                 {
-                    m_path = dlg.FileName;
-                    m_ListFilelabel.Text = dlg.FileName;
+                    m_PlayListMaker.FilePath = dlg.FileName;
+                    m_ListFileTextBox.Text = dlg.FileName;
                 }
                break;
                     
             }
-
-           
-
-            
         }
-  //      private PlayListmakerApp m_PlayListMaker;
-        private string m_path;
-        private string m_newFolderName;
+        
+        private void Bw_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (m_newFolderTextBox.Text == null || m_ListFileTextBox.Text == null)
+                MessageBox.Show("error", "please insert all the correct date");
+
+            m_PlayListMaker.NewFolderName = m_newFolderTextBox.Text;
+            m_PlayListMaker.GO();
+        }
+
+        private void Bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+               
+        }
+
+
+        private PlayListmakerApp m_PlayListMaker;
+       
+        private void m_viewFilesrichTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+       
     }
 }

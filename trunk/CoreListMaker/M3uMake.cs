@@ -42,7 +42,7 @@ namespace CoreListMaker
                     m_FilesList.Add(temp.Substring(lastEnd, temp.Length - 1));   
                 }
             }
-            
+            m_itemsCont = m_FilesList.Count;
             
         }
 

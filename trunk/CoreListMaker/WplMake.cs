@@ -33,6 +33,7 @@ namespace CoreListMaker
                              // XmlAttributeCollection fileAttribute = fileSorce[i].Attributes.ToString\;
               //  m_FilesList.Add(fileDetail.Substring(12,fileDetail.Length - fileDetail.LastIndexOfAny(new char[]{'t','i','d'})));
             }
+            m_itemsCont = m_FilesList.Count;
         }
 
         

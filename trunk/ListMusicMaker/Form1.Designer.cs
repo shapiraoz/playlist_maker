@@ -33,15 +33,17 @@
             this.m_ListFilelabel = new System.Windows.Forms.Label();
             this.m_FindListbutton = new System.Windows.Forms.Button();
             this.m_NewFolderlabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.m_newFolderTextBox = new System.Windows.Forms.TextBox();
             this.Path_button = new System.Windows.Forms.Button();
             this.m_viewFilesrichTextBox = new System.Windows.Forms.RichTextBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.m_backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // m_GObutton
             // 
             this.m_GObutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.m_GObutton.Location = new System.Drawing.Point(305, 243);
+            this.m_GObutton.Location = new System.Drawing.Point(305, 263);
             this.m_GObutton.Name = "m_GObutton";
             this.m_GObutton.Size = new System.Drawing.Size(75, 23);
             this.m_GObutton.TabIndex = 0;
@@ -89,12 +91,12 @@
             this.m_NewFolderlabel.TabIndex = 4;
             this.m_NewFolderlabel.Text = "New Folder Name:";
             // 
-            // textBox1
+            // m_newFolderTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(149, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 20);
-            this.textBox1.TabIndex = 5;
+            this.m_newFolderTextBox.Location = new System.Drawing.Point(149, 60);
+            this.m_newFolderTextBox.Name = "m_newFolderTextBox";
+            this.m_newFolderTextBox.Size = new System.Drawing.Size(185, 20);
+            this.m_newFolderTextBox.TabIndex = 5;
             // 
             // Path_button
             // 
@@ -109,18 +111,31 @@
             // 
             this.m_viewFilesrichTextBox.Location = new System.Drawing.Point(9, 96);
             this.m_viewFilesrichTextBox.Name = "m_viewFilesrichTextBox";
-            this.m_viewFilesrichTextBox.Size = new System.Drawing.Size(371, 141);
+            this.m_viewFilesrichTextBox.Size = new System.Drawing.Size(371, 144);
             this.m_viewFilesrichTextBox.TabIndex = 7;
             this.m_viewFilesrichTextBox.Text = "";
+            this.m_viewFilesrichTextBox.TextChanged += new System.EventHandler(this.m_viewFilesrichTextBox_TextChanged);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(9, 246);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(367, 11);
+            this.progressBar1.TabIndex = 8;
+            // 
+            // m_backgroundWorker
+            // 
+            this.m_backgroundWorker.WorkerReportsProgress = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 278);
+            this.ClientSize = new System.Drawing.Size(388, 298);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.m_viewFilesrichTextBox);
             this.Controls.Add(this.Path_button);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.m_newFolderTextBox);
             this.Controls.Add(this.m_NewFolderlabel);
             this.Controls.Add(this.m_FindListbutton);
             this.Controls.Add(this.m_ListFilelabel);
@@ -140,9 +155,11 @@
         private System.Windows.Forms.Label m_ListFilelabel;
         private System.Windows.Forms.Button m_FindListbutton;
         private System.Windows.Forms.Label m_NewFolderlabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox m_newFolderTextBox;
         private System.Windows.Forms.Button Path_button;
         private System.Windows.Forms.RichTextBox m_viewFilesrichTextBox;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.ComponentModel.BackgroundWorker m_backgroundWorker;
     }
 }
 
