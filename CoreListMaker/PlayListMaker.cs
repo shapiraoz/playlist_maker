@@ -17,7 +17,7 @@ namespace CoreListMaker
         const string MSG_COPY_FILES = "copying all files....(will take a while)";
         const string MSG_DONE_COPYING = "done copying all file .";
 
-        public PlayListMaker(string[] args,IServiceMake service)
+        public PlayListMaker(IServiceMake service)
         {
             m_serviceFuncs = service; 
 

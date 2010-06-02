@@ -11,17 +11,21 @@ namespace ListMusicMakerCLI
 {
     class PlayListMakerCLI:PlayListMaker
     {
-        const string WELCOME_STRING = "Power Oz software - PlaylistMaker \n core version : ";
+        const string LINE = "\n**********************************";
+        const string WELCOME_STRING = LINE+"\nPower Oz software - PlaylistMaker \ncore version : ";
+        
+        
         const string CMD_HELP1 = "/?";
         const string CMD_HELP2 = "-help";
         const string CMD_CREATE = "create";
-
+        const int PAD_SIZE = 8;
         
         
-        public PlayListMakerCLI(string[] args):base(args,new ServiceFuncCLI())
+        public PlayListMakerCLI(string[] args):base(new ServiceFuncCLI())
         {
             CreateCore();
-            m_serviceFuncs.PrintResult(WELCOME_STRING + GetVersion());
+            InitCommandDictionary();
+            m_serviceFuncs.PrintResult(WELCOME_STRING + GetVersion()+LINE);
             int i = 0;
             
             foreach (string s in args)
@@ -59,7 +63,13 @@ namespace ListMusicMakerCLI
 
         void PrintHelp()
         {
-            m_serviceFuncs.PrintResult("help");
+            m_serviceFuncs.PrintResult("\nhelp :\n");
+            foreach( KeyValuePair<string, string> commandPair in m_CommandDictionary)
+            {
+                m_serviceFuncs.PrintResult(commandPair.Key+ " - " +commandPair.Value);
+            }
+            m_serviceFuncs.PrintResult("\nend help.");
+           
         }
 
         public override void GO()
@@ -67,31 +77,29 @@ namespace ListMusicMakerCLI
             base.GO();
         }
         
-        //private XmlNodeList GetCommandListFromXml()
-        //{
-        //   // string xmlpath = Path.GetDirectoryName(Application.ExecutablePath)+"\\Profile.xml";
-
-        //    TextReader fileStr = new StreamReader(xmlpath, Encoding.UTF8);
-        //    string xmlContent = fileStr.ReadToEnd();
-        //    XmlDocument profileDoc = new XmlDocument();
-        //    profileDoc.LoadXml(xmlContent);
-        //    return profileDoc.GetElementsByTagName("commands");
-        //}
-
+      
         private void InitCommandDictionary()
         {
+            m_CommandDictionary.Add(CMD_HELP1.PadRight(PAD_SIZE,' '),EXPL_HELP);
+            m_CommandDictionary.Add(CMD_HELP2.PadRight(PAD_SIZE,' '), EXPL_HELP);
+            m_CommandDictionary.Add(CMD_CREATE.PadRight(PAD_SIZE,' '), EXPL_CREATE);
+        }
 
-        ////    XmlNodeList commandList = GetCommandListFromXml();
-        //    for (int i = 0; i < commandList.Count; i++)
-        //    {
-        //       // commandList[i].Attributes.Item(0).InnerText; // name
-        //    }
-        //   //  m_CommandDictionary.Add(CMD_HELP1,
+        private void CreateHelpFile()
+        {
+
         }
 
         private Dictionary<string, string> m_CommandDictionary = new Dictionary<string, string>();
 
-     
+        #region 
+
+        const string EXPL_HELP = "Show help page and expline all command";
+        const string EXPL_CREATE = "Create listfilePath [new folder folderpath] newFolderName \n\tfolderPath - can be new folder if the folder is not exit ListMusicMaker will make it. \n\tnewFolderName - string for new folder - this new folder will create at the execution default path";
         
+
+        #endregion
+
+
     }
 }
