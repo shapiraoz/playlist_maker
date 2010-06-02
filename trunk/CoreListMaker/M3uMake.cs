@@ -6,6 +6,7 @@ using System.Xml;
 using System.IO;
 using System.Text.RegularExpressions;
 
+
 namespace CoreListMaker
 {
     public class M3uMake : Amake

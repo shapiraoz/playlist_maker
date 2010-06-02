@@ -48,7 +48,7 @@ namespace ListMusicMaker
 
             
         }
-        private PlayListmakerApp m_PlayListMaker;
+  //      private PlayListmakerApp m_PlayListMaker;
         private string m_path;
         private string m_newFolderName;
     }

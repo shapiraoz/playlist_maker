@@ -7,12 +7,11 @@ namespace ListMusicMakerCLI
 {
     class Program
     {
-
                
         static void Main(string[] args)
         {
-            PlayListMakerCLI playlistMakerCLI = new PlayListMakerCLI(args[0], args[1]);
-            playlistMakerCLI.GO();
+            PlayListMakerCLI playlistMakerCLI = new PlayListMakerCLI(args);
+            //playlistMakerCLI.GO();
        }
     }
 }
