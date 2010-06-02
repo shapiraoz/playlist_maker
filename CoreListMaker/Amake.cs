@@ -24,6 +24,11 @@ namespace CoreListMaker
             m_mainDirPath = f.Directory.FullName;
         }
 
+        public int GetNumItems()
+        {
+            return m_itemsCont;
+        }
+
         public void CreateFolderOutPut(string Path)
         {
             m_targetPath = Path;
@@ -78,6 +83,7 @@ namespace CoreListMaker
             }
         }
 
+        protected int m_itemsCont;
         protected List<string> m_FilesList;
         protected string m_targetPath;
         protected Regex FILE_NAME_FORMAT = new Regex("[A-Za-z0-9 -. א-ת ()]+.[flacMmPp3]$");

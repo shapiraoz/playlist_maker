@@ -7,5 +7,7 @@ namespace CoreListMaker
     public interface IServiceMake
     {
         void PrintResult(string message);
+       
     }
+
 }

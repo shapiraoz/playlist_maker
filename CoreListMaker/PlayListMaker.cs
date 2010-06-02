@@ -32,7 +32,6 @@ namespace CoreListMaker
         public void CreateCore()
         {
             m_CoreMake = new Amake(m_serviceFuncs);
-            
         }
 
         public void CreateCore(string filePath, string newFolderName)
@@ -90,7 +89,7 @@ namespace CoreListMaker
         protected Amake m_CoreMake;
         protected Regex m_m3uPath = new Regex("[:a-zA-Z0-9א-ת_\\ ]+.[mM]3[uU]$");
         protected Regex m_wplPath = new Regex("[:a-zA-Z0-9א-ת_\\ ]+.[Ww][Pp][Ll]$");
-        protected IServiceMake m_serviceFuncs;
+        public IServiceMake m_serviceFuncs;
         private string m_filePath;
         private string m_newFolderName;
        
