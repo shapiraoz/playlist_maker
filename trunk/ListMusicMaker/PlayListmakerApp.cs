@@ -5,14 +5,14 @@ using CoreListMaker;
 
 namespace ListMusicMaker
 {
-    //class PlayListmakerApp:PlayListMaker
-    //{
-    //    //public PlayListmakerApp(string path, string folderName)
-    //    //    : base(path, folderName)
-    //    //{
+    class PlayListmakerApp : PlayListMaker
+    {
+        public PlayListmakerApp()
+            : base(new ServiceFuncGUI())
+        {
 
-    //    //}
+        }
 
 
-    //}
+    }
 }

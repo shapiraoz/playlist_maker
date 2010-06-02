@@ -14,6 +14,7 @@ namespace ListMusicMaker
     {
         public MainForm()
         {
+            
             InitializeComponent();
         }
 
