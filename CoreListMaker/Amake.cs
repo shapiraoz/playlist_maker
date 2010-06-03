@@ -24,7 +24,7 @@ namespace CoreListMaker
             m_mainDirPath = f.Directory.FullName;
         }
 
-        public int GetNumItems()
+        public float GetNumItems()
         {
             return m_itemsCont;
         }
@@ -53,6 +53,7 @@ namespace CoreListMaker
             }
             else
             {
+                float count = 1;
                 foreach (string s in m_FilesList)
                 {
                     string temps = s;
@@ -64,7 +65,7 @@ namespace CoreListMaker
                     {
 
                         File.Copy(m_mainDirPath + "\\" + s, m_targetPath + "\\" + fileName.ToString(), true);
-                        serviceFunc.PrintResult(COPY_FILE_MSG + fileName.ToString());
+                        serviceFunc.PrintResult(COPY_FILE_MSG + fileName.ToString(), (count/ m_itemsCont));
                     }
                     catch (System.IO.FileNotFoundException ex)
                     {
@@ -78,12 +79,12 @@ namespace CoreListMaker
                     {
                         serviceFunc.PrintResult(CANT_COPY_MSG + ex2.Message);
                     }
-
+                    ++count;
                 }
             }
         }
 
-        protected int m_itemsCont;
+        protected float m_itemsCont;
         protected List<string> m_FilesList;
         protected string m_targetPath;
         protected Regex FILE_NAME_FORMAT = new Regex("[A-Za-z0-9 -. א-ת ()]+.[flacMmPp3]$");
