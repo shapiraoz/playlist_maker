@@ -11,6 +11,10 @@ namespace ListMusicMakerCLI
         {
            Console.WriteLine(message);
         }
-
+        
+        public void PrintResult(string message, float percentage)
+        {
+            Console.WriteLine(message);
+        }
     }
 }

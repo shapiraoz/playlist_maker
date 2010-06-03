@@ -36,7 +36,7 @@
             this.m_newFolderTextBox = new System.Windows.Forms.TextBox();
             this.Path_button = new System.Windows.Forms.Button();
             this.m_viewFilesrichTextBox = new System.Windows.Forms.RichTextBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.m_progressBar = new System.Windows.Forms.ProgressBar();
             this.m_backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
@@ -116,12 +116,12 @@
             this.m_viewFilesrichTextBox.Text = "";
             this.m_viewFilesrichTextBox.TextChanged += new System.EventHandler(this.m_viewFilesrichTextBox_TextChanged);
             // 
-            // progressBar1
+            // m_progressBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(9, 246);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(367, 11);
-            this.progressBar1.TabIndex = 8;
+            this.m_progressBar.Location = new System.Drawing.Point(9, 246);
+            this.m_progressBar.Name = "m_progressBar";
+            this.m_progressBar.Size = new System.Drawing.Size(367, 11);
+            this.m_progressBar.TabIndex = 8;
             // 
             // m_backgroundWorker
             // 
@@ -132,7 +132,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 298);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.m_progressBar);
             this.Controls.Add(this.m_viewFilesrichTextBox);
             this.Controls.Add(this.Path_button);
             this.Controls.Add(this.m_newFolderTextBox);
@@ -143,6 +143,7 @@
             this.Controls.Add(this.m_GObutton);
             this.Name = "MainForm";
             this.Text = "Power Oz software- PLayList Maker ";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,7 +159,7 @@
         private System.Windows.Forms.TextBox m_newFolderTextBox;
         private System.Windows.Forms.Button Path_button;
         private System.Windows.Forms.RichTextBox m_viewFilesrichTextBox;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar m_progressBar;
         private System.ComponentModel.BackgroundWorker m_backgroundWorker;
     }
 }
