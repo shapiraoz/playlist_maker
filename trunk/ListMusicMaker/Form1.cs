@@ -60,7 +60,7 @@ namespace ListMusicMaker
         private void Bw_DoWork(object sender, DoWorkEventArgs e)
         {
             if (m_newFolderTextBox.Text == null || m_ListFileTextBox.Text == null)
-                MessageBox.Show("error", "please insert all the correct date");
+                MessageBox.Show("ListMusicMaker error", "please insert all the correct file and folder path ",MessageBoxButtons.OK,MessageBoxIcon.Error);
 
             m_PlayListMaker.NewFolderName = m_newFolderTextBox.Text;
             m_PlayListMaker.CreateCore(m_ListFileTextBox.Text,m_newFolderTextBox.Text);
