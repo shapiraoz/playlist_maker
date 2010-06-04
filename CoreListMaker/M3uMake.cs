@@ -33,13 +33,15 @@ namespace CoreListMaker
                 allContent = m_m3uListFile.ReadToEnd();
                 
                 allContentArr = allContent.Split('\r');
-                Match match =  LINE_SEPARATE.Match(allContent);
-                for (int i = 2; i < allContentArr.Length; i+=3)
+                for (int i = 0; i < allContentArr.Length; i++)
                 {
-                    string temp = allContentArr[i];
-                    MatchCollection newS = END.Matches(temp, 0);
-                    int lastEnd = newS[newS.Count - 1].Index + 1;
-                    m_FilesList.Add(temp.Substring(lastEnd, temp.Length - 1));   
+                    allContentArr[i] = allContentArr[i].Trim('\n');
+                    if ((!LINE_SEPARATE.IsMatch(allContentArr[i]) && (allContentArr[i]!="")))
+                    {
+                        m_FilesList.Add(allContentArr[i].Substring(0, allContentArr[i].Length));
+                    }
+
+                    
                 }
             }
             m_itemsCont = m_FilesList.Count;
@@ -47,7 +49,7 @@ namespace CoreListMaker
         }
 
         private TextReader m_m3uListFile;
-        private Regex LINE_SEPARATE = new Regex("#EXTINF:");
+        private Regex LINE_SEPARATE = new Regex("#EXT[A-Z0-9:]+");
         
     }
 }
