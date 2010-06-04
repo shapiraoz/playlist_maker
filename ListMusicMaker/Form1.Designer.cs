@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.m_GObutton = new System.Windows.Forms.Button();
             this.m_ListFileTextBox = new System.Windows.Forms.TextBox();
             this.m_ListFilelabel = new System.Windows.Forms.Label();
             this.m_FindListbutton = new System.Windows.Forms.Button();
             this.m_NewFolderlabel = new System.Windows.Forms.Label();
             this.m_newFolderTextBox = new System.Windows.Forms.TextBox();
-            this.Path_button = new System.Windows.Forms.Button();
             this.m_viewFilesrichTextBox = new System.Windows.Forms.RichTextBox();
             this.m_progressBar = new System.Windows.Forms.ProgressBar();
             this.m_backgroundWorker = new System.ComponentModel.BackgroundWorker();
@@ -93,19 +93,10 @@
             // 
             // m_newFolderTextBox
             // 
-            this.m_newFolderTextBox.Location = new System.Drawing.Point(149, 60);
+            this.m_newFolderTextBox.Location = new System.Drawing.Point(142, 60);
             this.m_newFolderTextBox.Name = "m_newFolderTextBox";
-            this.m_newFolderTextBox.Size = new System.Drawing.Size(185, 20);
+            this.m_newFolderTextBox.Size = new System.Drawing.Size(192, 20);
             this.m_newFolderTextBox.TabIndex = 5;
-            // 
-            // Path_button
-            // 
-            this.Path_button.Location = new System.Drawing.Point(341, 56);
-            this.Path_button.Name = "Path_button";
-            this.Path_button.Size = new System.Drawing.Size(39, 23);
-            this.Path_button.TabIndex = 6;
-            this.Path_button.Text = "Path";
-            this.Path_button.UseVisualStyleBackColor = true;
             // 
             // m_viewFilesrichTextBox
             // 
@@ -134,13 +125,13 @@
             this.ClientSize = new System.Drawing.Size(388, 298);
             this.Controls.Add(this.m_progressBar);
             this.Controls.Add(this.m_viewFilesrichTextBox);
-            this.Controls.Add(this.Path_button);
             this.Controls.Add(this.m_newFolderTextBox);
             this.Controls.Add(this.m_NewFolderlabel);
             this.Controls.Add(this.m_FindListbutton);
             this.Controls.Add(this.m_ListFilelabel);
             this.Controls.Add(this.m_ListFileTextBox);
             this.Controls.Add(this.m_GObutton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Power Oz software- PLayList Maker ";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -157,7 +148,6 @@
         private System.Windows.Forms.Button m_FindListbutton;
         private System.Windows.Forms.Label m_NewFolderlabel;
         private System.Windows.Forms.TextBox m_newFolderTextBox;
-        private System.Windows.Forms.Button Path_button;
         private System.Windows.Forms.RichTextBox m_viewFilesrichTextBox;
         private System.Windows.Forms.ProgressBar m_progressBar;
         private System.ComponentModel.BackgroundWorker m_backgroundWorker;

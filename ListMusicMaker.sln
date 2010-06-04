@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreListMaker", "CoreListMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListMusicMakerCLI", "ListMusicMakerCLI\ListMusicMakerCLI.csproj", "{9F6DFC51-BF08-493E-BEF1-ED57256521A1}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "install", "install\install.vdproj", "{EA92485D-437D-4B8B-880C-C37E7D735D8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,8 @@ Global
 		{9F6DFC51-BF08-493E-BEF1-ED57256521A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F6DFC51-BF08-493E-BEF1-ED57256521A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F6DFC51-BF08-493E-BEF1-ED57256521A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA92485D-437D-4B8B-880C-C37E7D735D8C}.Debug|Any CPU.ActiveCfg = Debug
+		{EA92485D-437D-4B8B-880C-C37E7D735D8C}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
