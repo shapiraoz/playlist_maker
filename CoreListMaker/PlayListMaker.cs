@@ -12,10 +12,18 @@ namespace CoreListMaker
 {
     public class PlayListMaker
     {
+
+        const string welcome_string = "Power Oz software - PlaylistMaker \ncore version : ";
+        public string WELCOME_STRING
+        {
+            get { return welcome_string; }
+        } 
+
         const string ERR_MSG_PATH_NOT_FILED = "playlist file not empty";
         const string ERR_MSG_NOT_RIGHT_EXT = "incorrect file extention";
         const string MSG_COPY_FILES = "copying all files....(will take a while)";
         const string MSG_DONE_COPYING = "done copying all file .";
+
 
         public PlayListMaker(IServiceMake service)
         {
@@ -68,7 +76,7 @@ namespace CoreListMaker
 
         }
 
-        protected string GetVersion()
+        public string GetVersion()
         {
             return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }

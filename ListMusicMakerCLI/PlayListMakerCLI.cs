@@ -11,8 +11,8 @@ namespace ListMusicMakerCLI
 {
     class PlayListMakerCLI:PlayListMaker
     {
-        const string LINE = "\n**********************************";
-        const string WELCOME_STRING = LINE+"\nPower Oz software - PlaylistMaker \ncore version : ";
+        const string LINE = "\n**********************************\n";
+        
         
         
         const string CMD_HELP1 = "/?";
@@ -25,7 +25,7 @@ namespace ListMusicMakerCLI
         {
             CreateCore();
             InitCommandDictionary();
-            m_serviceFuncs.PrintResult(WELCOME_STRING + GetVersion()+LINE);
+            m_serviceFuncs.PrintResult(LINE + WELCOME_STRING + GetVersion()+LINE);
             int i = 0;
             
             foreach (string s in args)
