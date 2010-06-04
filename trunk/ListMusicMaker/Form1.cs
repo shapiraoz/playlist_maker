@@ -15,10 +15,13 @@ namespace ListMusicMaker
         public MainForm()
         {
             InitializeComponent();
+              
             m_PlayListMaker = new PlayListmakerApp(ref m_backgroundWorker);
+            m_welcomeLable.Text = m_PlayListMaker.WELCOME_STRING + m_PlayListMaker.GetVersion();
             m_backgroundWorker.DoWork += new DoWorkEventHandler(Bw_DoWork);
             m_backgroundWorker.WorkerReportsProgress = true;
             m_backgroundWorker.ProgressChanged += new ProgressChangedEventHandler(Bw_ProgressChanged);
+        
         }
 
         private void m_GObutton_Click(object sender, EventArgs e)
@@ -28,6 +31,8 @@ namespace ListMusicMaker
                 m_backgroundWorker.RunWorkerAsync();
             }
         }
+
+        
 
         private void m_FindListbutton_Click(object sender, EventArgs e)
         {
@@ -79,6 +84,21 @@ namespace ListMusicMaker
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void m_FindFolderButton_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+            DialogResult result = folderDialog.ShowDialog();
+            switch (result)
+            {
+                case DialogResult.None:
+                    break;
+                case DialogResult.OK:
+                    m_newFolderTextBox.Text =  folderDialog.SelectedPath;
+                    break;
+            }
 
         }
        
