@@ -12,16 +12,17 @@ namespace ListMusicMaker
 {
     public partial class MainForm : Form
     {
+
+        private PlayListmakerApp m_PlayListMaker;
+
         public MainForm()
         {
             InitializeComponent();
-              
             m_PlayListMaker = new PlayListmakerApp(ref m_backgroundWorker);
-            m_welcomeLable.Text = m_PlayListMaker.WELCOME_STRING + m_PlayListMaker.GetVersion();
+            m_welcomeLable.Text = m_PlayListMaker.MSG_WELCOME_STRING + m_PlayListMaker.GetVersion();
             m_backgroundWorker.DoWork += new DoWorkEventHandler(Bw_DoWork);
             m_backgroundWorker.WorkerReportsProgress = true;
             m_backgroundWorker.ProgressChanged += new ProgressChangedEventHandler(Bw_ProgressChanged);
-        
         }
 
         private void m_GObutton_Click(object sender, EventArgs e)
@@ -31,8 +32,6 @@ namespace ListMusicMaker
                 m_backgroundWorker.RunWorkerAsync();
             }
         }
-
-        
 
         private void m_FindListbutton_Click(object sender, EventArgs e)
         {
@@ -65,17 +64,17 @@ namespace ListMusicMaker
             m_PlayListMaker.NewFolderName = m_newFolderTextBox.Text;
             m_PlayListMaker.CreateCore(m_ListFileTextBox.Text,m_newFolderTextBox.Text);
             m_PlayListMaker.GO();
+           
         }
 
         private void Bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             m_viewFilesrichTextBox.AppendText(e.UserState.ToString());
             m_progressBar.Value = e.ProgressPercentage;
-
         }
 
 
-        private PlayListmakerApp m_PlayListMaker;
+      
        
         private void m_viewFilesrichTextBox_TextChanged(object sender, EventArgs e)
         {
