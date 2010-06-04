@@ -22,8 +22,8 @@ namespace ListMusicMaker
         public void PrintResult(string message)
         {
            m_showtext+=message="\n";
-          // m_BackgroundWorker.ReportProgress(
         }
+
         public void PrintResult(string message, float percentage)
         {
            m_BackgroundWorker.ReportProgress((int)(percentage * 100), message + "\n");
