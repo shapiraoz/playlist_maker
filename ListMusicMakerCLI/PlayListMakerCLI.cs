@@ -25,7 +25,7 @@ namespace ListMusicMakerCLI
         {
             CreateCore();
             InitCommandDictionary();
-            m_serviceFuncs.PrintResult(LINE + WELCOME_STRING + GetVersion()+LINE);
+            m_serviceFuncs.PrintResult(LINE + MSG_WELCOME_STRING + GetVersion() + LINE);
             int i = 0;
             
             foreach (string s in args)
@@ -75,6 +75,7 @@ namespace ListMusicMakerCLI
         public override void GO()
         {
             base.GO();
+           
         }
         
       

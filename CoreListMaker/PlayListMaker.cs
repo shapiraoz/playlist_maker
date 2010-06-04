@@ -5,26 +5,22 @@ using System.Text.RegularExpressions;
 using System.Reflection;
 using System.IO;
 
-//[assembly: AssemblyVersionAttribute("1.0.0.0")]
-//[assembly: AssemblyTitleAttribute("PlayList Maker main core")]
-
 namespace CoreListMaker
 {
     public class PlayListMaker
     {
 
         const string welcome_string = "Power Oz software - PlaylistMaker \ncore version : ";
-        public string WELCOME_STRING
-        {
-            get { return welcome_string; }
-        } 
-
+        const string Line = "-------------------------------------------";
+        public string MSG_LINE{get { return Line; }} 
+        const string complete_work = "Done copying all files.";
+        public string MSG_DONE_COPYING{get { return complete_work; } } 
+        public string MSG_WELCOME_STRING{ get { return welcome_string; } }
         const string ERR_MSG_PATH_NOT_FILED = "playlist file not empty";
         const string ERR_MSG_NOT_RIGHT_EXT = "incorrect file extention";
+        const string MSG_CREATE_FOLDER = "confirm folder exist (will create if not)";
         const string MSG_COPY_FILES = "copying all files....(will take a while)";
-        const string MSG_DONE_COPYING = "done copying all file .";
-
-
+        
         public PlayListMaker(IServiceMake service)
         {
             m_serviceFuncs = service; 
@@ -44,9 +40,6 @@ namespace CoreListMaker
 
         public void CreateCore(string filePath, string newFolderName)
         {
-          
-            
-
             if (m_m3uPath.IsMatch(filePath))
             {
                 m_CoreMake = new M3uMake(filePath);
@@ -68,10 +61,14 @@ namespace CoreListMaker
             else
             {
                 m_CoreMake.ReadData();
+                m_serviceFuncs.PrintResult(MSG_LINE, 0);
+                m_serviceFuncs.PrintResult(MSG_CREATE_FOLDER,0);
                 m_CoreMake.CreateFolderOutPut(m_newFolderName);
-                m_serviceFuncs.PrintResult(MSG_COPY_FILES+"\n");
+                m_serviceFuncs.PrintResult(MSG_LINE, 0);
+                m_serviceFuncs.PrintResult(MSG_COPY_FILES+"\n",0);
                 m_CoreMake.CopyAllFiles(m_serviceFuncs);
-                
+                m_serviceFuncs.PrintResult(MSG_LINE,0);
+                m_serviceFuncs.PrintResult(MSG_DONE_COPYING,0);
             }
 
         }
@@ -92,8 +89,7 @@ namespace CoreListMaker
             get { return m_newFolderName; }
             set { m_newFolderName = value; }
         }
-        
-
+  
         protected Amake m_CoreMake;
         protected Regex m_m3uPath = new Regex("[:a-zA-Z0-9א-ת_\\ ]+.[mM]3[uU]$");
         protected Regex m_wplPath = new Regex("[:a-zA-Z0-9א-ת_\\ ]+.[Ww][Pp][Ll]$");
