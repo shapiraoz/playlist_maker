@@ -60,24 +60,29 @@ namespace CoreListMaker
                     temps = temps.Contains("[") ? temps.Replace('[', '(') : temps;
                     temps = temps.Contains("]") ? temps.Replace(']', ')') : temps;
                     Match fileName = FILE_NAME_FORMAT.Match(temps);
-
+                    string src = (File.Exists(s)) ? s : (m_mainDirPath + "\\" + s);
+                    
                     try
                     {
 
-                        File.Copy(m_mainDirPath + "\\" + s, m_targetPath + "\\" + fileName.ToString(), true);
-                        serviceFunc.PrintResult(COPY_FILE_MSG + fileName.ToString(), (count/ m_itemsCont));
+                        File.Copy(src, m_targetPath + "\\" + fileName.ToString(), true);
+                        serviceFunc.PrintResult(COPY_FILE_MSG + fileName.ToString(), (count / m_itemsCont));
                     }
                     catch (System.IO.FileNotFoundException ex)
                     {
-                        serviceFunc.PrintResult(CANT_COPY_MSG + ex.Message);
+                        serviceFunc.PrintResult(CANT_COPY_MSG + ex.Message, (count / m_itemsCont));
                     }
                     catch (System.IO.DirectoryNotFoundException ex1)
                     {
-                        serviceFunc.PrintResult(CANT_COPY_MSG + ex1.Message);
+                        serviceFunc.PrintResult(CANT_COPY_MSG + ex1.Message, (count / m_itemsCont));
                     }
                     catch (System.UnauthorizedAccessException ex2)
                     {
-                        serviceFunc.PrintResult(CANT_COPY_MSG + ex2.Message);
+                        serviceFunc.PrintResult(CANT_COPY_MSG + ex2.Message, (count / m_itemsCont));
+                    }
+                    catch (System.Exception ex3)
+                    {
+                        serviceFunc.PrintResult(CANT_COPY_MSG + ex3.Message, (count / m_itemsCont));
                     }
                     ++count;
                 }
