@@ -10,7 +10,15 @@ namespace CoreListMaker
     public class PlayListMaker
     {
 
-        const string welcome_string = "Power Oz software - PlaylistMaker \ncore version : ";
+        const string app_name = "PlaylistMaker";
+
+        public string APP_NAME
+        {
+            get { return app_name; }
+        }
+
+        const string welcome_string = "Power Oz software - " + app_name;
+        public string CORE_VERSION = "core version :"; 
         const string Line = "-------------------------------------------";
         public string MSG_LINE{get { return Line; }} 
         const string complete_work = "Done copying all files.";
