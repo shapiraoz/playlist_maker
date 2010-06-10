@@ -69,6 +69,7 @@ namespace CoreListMaker
             else
             {
                 m_CoreMake.ReadData();
+                m_serviceFuncs.ClearResult();
                 m_serviceFuncs.PrintResult(MSG_LINE, 0);
                 m_serviceFuncs.PrintResult(MSG_CREATE_FOLDER,0);
                 m_CoreMake.CreateFolderOutPut(m_newFolderName);

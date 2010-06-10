@@ -28,6 +28,11 @@ namespace ListMusicMaker
         {
            m_BackgroundWorker.ReportProgress((int)(percentage * 100), message + "\n");
         }
+
+        public void ClearResult()
+        {
+            m_BackgroundWorker.ReportProgress(1,"Clear");
+        }
         #endregion
     }
 }

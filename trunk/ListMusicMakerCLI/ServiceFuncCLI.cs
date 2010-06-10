@@ -16,5 +16,7 @@ namespace ListMusicMakerCLI
         {
             Console.WriteLine(message);
         }
+
+        public void ClearResult() { }
     }
 }
