@@ -95,7 +95,7 @@ namespace ListMusicMaker
         {
            
             if (m_newFolderTextBox.Text == null || m_ListFileTextBox.Text == null)
-                MessageBox.Show("ListMusicMaker error", "please insert all the correct file and folder path ",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("please insert all the correct file and folder path ", m_PlayListMaker.APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             m_PlayListMaker.NewFolderName = m_newFolderTextBox.Text;
             m_PlayListMaker.CreateCore(m_ListFileTextBox.Text,m_newFolderTextBox.Text);
@@ -105,7 +105,8 @@ namespace ListMusicMaker
 
         private void Bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            m_viewFilesrichTextBox.AppendText(e.UserState.ToString());
+            if (e.UserState == "Clear") m_viewFilesrichTextBox.Clear();
+            else m_viewFilesrichTextBox.AppendText(e.UserState.ToString());
             m_progressBar.Value = e.ProgressPercentage;
         }
 
@@ -141,6 +142,11 @@ namespace ListMusicMaker
         private void pickFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FindFolder();
+        }
+
+        private void m_ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
        
     }

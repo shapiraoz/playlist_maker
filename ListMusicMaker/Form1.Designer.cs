@@ -45,6 +45,7 @@
             this.pickPlaylistFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pickFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_ExitButton = new System.Windows.Forms.Button();
             this.m_menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -188,12 +189,24 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // m_ExitButton
+            // 
+            this.m_ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.m_ExitButton.Location = new System.Drawing.Point(9, 285);
+            this.m_ExitButton.Name = "m_ExitButton";
+            this.m_ExitButton.Size = new System.Drawing.Size(75, 23);
+            this.m_ExitButton.TabIndex = 12;
+            this.m_ExitButton.Text = "Exit";
+            this.m_ExitButton.UseVisualStyleBackColor = true;
+            this.m_ExitButton.Click += new System.EventHandler(this.m_ExitButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(386, 316);
+            this.Controls.Add(this.m_ExitButton);
             this.Controls.Add(this.m_FindFolderButton);
             this.Controls.Add(this.m_welcomeLable);
             this.Controls.Add(this.m_progressBar);
@@ -237,6 +250,7 @@
         private System.Windows.Forms.ToolStripMenuItem pickPlaylistFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pickFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Button m_ExitButton;
     }
 }
 

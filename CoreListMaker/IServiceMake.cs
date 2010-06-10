@@ -8,6 +8,7 @@ namespace CoreListMaker
     {
         void PrintResult(string message);
         void PrintResult(string message, float percentage);
+        void ClearResult();
     }
 
 }
