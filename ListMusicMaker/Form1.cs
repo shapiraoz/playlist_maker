@@ -30,8 +30,8 @@ namespace ListMusicMaker
         private void m_GObutton_Click(object sender, EventArgs e)
         {
             if ((m_GObutton.Text == "Recopy") &&
-                (MessageBox.Show(MSG_AGAIN, m_PlayListMaker.APP_NAME, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes))
-                  runProgram();
+                        (MessageBox.Show(MSG_AGAIN, m_PlayListMaker.APP_NAME, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes))
+                runProgram();
             else 
             {
                 runProgram();
@@ -71,6 +71,7 @@ namespace ListMusicMaker
                break;
             }
         }
+
         private void FindFolder()
         {
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
@@ -147,6 +148,11 @@ namespace ListMusicMaker
         private void m_ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void createListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            runProgram();
         }
        
     }

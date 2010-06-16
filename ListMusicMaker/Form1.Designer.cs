@@ -46,6 +46,8 @@
             this.pickFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_ExitButton = new System.Windows.Forms.Button();
+            this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,7 +153,8 @@
             // m_menuStrip
             // 
             this.m_menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.actionsToolStripMenuItem});
             this.m_menuStrip.Location = new System.Drawing.Point(0, 0);
             this.m_menuStrip.Name = "m_menuStrip";
             this.m_menuStrip.Size = new System.Drawing.Size(386, 24);
@@ -199,6 +202,21 @@
             this.m_ExitButton.Text = "Exit";
             this.m_ExitButton.UseVisualStyleBackColor = true;
             this.m_ExitButton.Click += new System.EventHandler(this.m_ExitButton_Click);
+            // 
+            // actionsToolStripMenuItem
+            // 
+            this.actionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createListToolStripMenuItem});
+            this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
+            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.actionsToolStripMenuItem.Text = "Actions";
+            // 
+            // createListToolStripMenuItem
+            // 
+            this.createListToolStripMenuItem.Name = "createListToolStripMenuItem";
+            this.createListToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.createListToolStripMenuItem.Text = "CreateList";
+            this.createListToolStripMenuItem.Click += new System.EventHandler(this.createListToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -251,6 +269,8 @@
         private System.Windows.Forms.ToolStripMenuItem pickFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button m_ExitButton;
+        private System.Windows.Forms.ToolStripMenuItem actionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createListToolStripMenuItem;
     }
 }
 
