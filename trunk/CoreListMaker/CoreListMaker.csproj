@@ -51,4 +51,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <PostBuildEvent>copy  "$(TargetPath)"  L:\latestListMusicMaker\$(TargetFileName)  /y</PostBuildEvent>
+  </PropertyGroup>
 </Project>
