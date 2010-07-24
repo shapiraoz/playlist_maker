@@ -58,5 +58,6 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
+    <PostBuildEvent>copy  "$(TargetPath)"  L:\latestListMusicMaker\LMM.exe /y</PostBuildEvent>
   </PropertyGroup>
 </Project>
