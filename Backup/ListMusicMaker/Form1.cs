@@ -106,7 +106,7 @@ namespace ListMusicMaker
 
         private void Bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            if (e.UserState.ToString() == "Clear") m_viewFilesrichTextBox.Clear();
+            if (e.UserState == "Clear") m_viewFilesrichTextBox.Clear();
             else m_viewFilesrichTextBox.AppendText(e.UserState.ToString());
             m_progressBar.Value = e.ProgressPercentage;
         }

@@ -1,6 +1,9 @@
 ﻿
 using System;
 using System.Collections.Generic;
+
+using System.Text;
+using System.Xml;
 using System.IO;
 using System.Text.RegularExpressions;
 
@@ -17,7 +20,8 @@ namespace CoreListMaker
         public Amake(string filePath)
         {
             m_filePath = filePath;
-            m_mainDirPath = new FileInfo(filePath).Directory.FullName;
+            FileInfo f = new FileInfo(filePath);
+            m_mainDirPath = f.Directory.FullName;
         }
 
         public float GetNumItems()
@@ -64,6 +68,18 @@ namespace CoreListMaker
                         File.Copy(src, m_targetPath + "\\" + fileName.ToString(), true);
                         serviceFunc.PrintResult(COPY_FILE_MSG + fileName.ToString(), (count / m_itemsCont));
                     }
+                    catch (System.IO.FileNotFoundException ex)
+                    {
+                        serviceFunc.PrintResult(CANT_COPY_MSG + ex.Message, (count / m_itemsCont));
+                    }
+                    catch (System.IO.DirectoryNotFoundException ex1)
+                    {
+                        serviceFunc.PrintResult(CANT_COPY_MSG + ex1.Message, (count / m_itemsCont));
+                    }
+                    catch (System.UnauthorizedAccessException ex2)
+                    {
+                        serviceFunc.PrintResult(CANT_COPY_MSG + ex2.Message, (count / m_itemsCont));
+                    }
                     catch (System.Exception ex3)
                     {
                         serviceFunc.PrintResult(CANT_COPY_MSG + ex3.Message, (count / m_itemsCont));
@@ -76,7 +92,7 @@ namespace CoreListMaker
         protected float m_itemsCont;
         protected List<string> m_FilesList;
         protected string m_targetPath;
-        protected Regex FILE_NAME_FORMAT = new Regex("[A-Za-z0-9 -. א-ת ()]+.[flacMmPp3wa]$");
+        protected Regex FILE_NAME_FORMAT = new Regex("[A-Za-z0-9 -. א-ת ()]+.[flacMmPp3]$");
         protected Regex END = new Regex("[\n\r]");
         protected string m_filePath;
         protected string m_mainDirPath;

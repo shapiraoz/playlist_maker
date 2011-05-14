@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListMusicMaker", "ListMusicMaker\ListMusicMaker.csproj", "{A892CEA1-204D-4D0B-B22C-784D503E6D84}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreListMaker", "CoreListMaker\CoreListMaker.csproj", "{3F860B9F-A2CA-4BE0-B9C1-3B25D14E775B}"
