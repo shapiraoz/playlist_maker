@@ -27,14 +27,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2D3109CE81431149BBBE3D5C3E2375D6"
-        "OwnerKey" = "8:_1819AE1ABB3D462A80580519996C725E"
+        "MsmKey" = "8:_632D85A1ECFD40ADA45F83B151A3E7BD"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2D3109CE81431149BBBE3D5C3E2375D6"
+        "MsmKey" = "8:_81652C5AE9C51664283CF2D574ED9092"
         "OwnerKey" = "8:_0786B66D8B694113885119BFD09CC4D3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_81652C5AE9C51664283CF2D574ED9092"
+        "OwnerKey" = "8:_1819AE1ABB3D462A80580519996C725E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,7 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2D3109CE81431149BBBE3D5C3E2375D6"
+        "OwnerKey" = "8:_81652C5AE9C51664283CF2D574ED9092"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_632D85A1ECFD40ADA45F83B151A3E7BD"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -79,6 +91,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -95,6 +115,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -116,7 +144,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "Version" = "8:3.5.21022"
+                "FrameworkVersion" = "8:3.5.21022"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=76617"
                 }
@@ -131,7 +159,33 @@
             "AssemblyAsmDisplayName" = "8:CoreListMaker, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2D3109CE81431149BBBE3D5C3E2375D6"
+                }
+            "SourcePath" = "8:CoreListMaker.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_31F10219409E4622BF98D821833AED0E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_81652C5AE9C51664283CF2D574ED9092"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:CoreListMaker, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_81652C5AE9C51664283CF2D574ED9092"
                     {
                     "Name" = "8:CoreListMaker.dll"
                     "Attributes" = "3:512"
@@ -234,6 +288,7 @@
         "ProductCode" = "8:{DA297A6C-F58E-4F72-8C13-38E6B2D5161F}"
         "PackageCode" = "8:{76E3AA8C-E6C8-4DB2-A916-35B4D9E34DD4}"
         "UpgradeCode" = "8:{E0208D37-470D-470C-B8C7-B27766AA43AE}"
+        "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
@@ -780,7 +835,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0786B66D8B694113885119BFD09CC4D3"
             {
-            "SourcePath" = "8:..\\ListMusicMakerCLI\\obj\\Release\\ListMusicMakerCLI.exe"
+            "SourcePath" = "8:..\\ListMusicMakerCLI\\obj\\Debug\\ListMusicMakerCLI.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_31F10219409E4622BF98D821833AED0E"
@@ -808,7 +863,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1819AE1ABB3D462A80580519996C725E"
             {
-            "SourcePath" = "8:..\\ListMusicMaker\\obj\\Release\\ListMusicMaker.exe"
+            "SourcePath" = "8:..\\ListMusicMaker\\obj\\Debug\\ListMusicMaker.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_31F10219409E4622BF98D821833AED0E"
@@ -829,6 +884,34 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{A892CEA1-204D-4D0B-B22C-784D503E6D84}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_632D85A1ECFD40ADA45F83B151A3E7BD"
+            {
+            "SourcePath" = "8:..\\CoreListMaker\\obj\\Debug\\CoreListMaker.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_31F10219409E4622BF98D821833AED0E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{3F860B9F-A2CA-4BE0-B9C1-3B25D14E775B}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
