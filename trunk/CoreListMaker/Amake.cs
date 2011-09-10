@@ -44,8 +44,8 @@ namespace CoreListMaker
 
             if (!Directory.Exists(m_targetPath))
             {
-                m_targetPath = m_mainDirPath + "\\" + m_targetPath;
-                Directory.CreateDirectory(m_mainDirPath + "\\" + m_targetPath);
+                m_targetPath = Path.Combine(m_mainDirPath , m_targetPath);
+                Directory.CreateDirectory(m_targetPath);
             }
             else
             {
@@ -56,12 +56,12 @@ namespace CoreListMaker
                     temps = temps.Contains("[") ? temps.Replace('[', '(') : temps;
                     temps = temps.Contains("]") ? temps.Replace(']', ')') : temps;
                     Match fileName = FILE_NAME_FORMAT.Match(temps);
-                    string src = (File.Exists(s)) ? s : (m_mainDirPath + "\\" + s);
+                    string src = (File.Exists(s)) ? s : Path.Combine(m_mainDirPath ,s);
                     
                     try
                     {
 
-                        File.Copy(src, m_targetPath + "\\" + fileName.ToString(), true);
+                        File.Copy(src, Path.Combine(m_targetPath , fileName.ToString()), true);
                         serviceFunc.PrintResult(COPY_FILE_MSG + fileName.ToString(), (count / m_itemsCont));
                     }
                     catch (System.Exception ex3)
