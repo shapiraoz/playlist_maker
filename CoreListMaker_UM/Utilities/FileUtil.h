@@ -1,5 +1,5 @@
-#ifndef UTIL_H
-#define UTIL_H
+#ifndef FILE_UTIL_H
+#define FILE_UTIL_H
 #include <iostream>
 
 #ifdef WINDOWS 
@@ -11,7 +11,7 @@
 	#define MkDir mkdir
 	#define GetCurrentDir getcwd
 #endif
-#define FU_REWRITE 1
+#define REWRITE 1
 
 using namespace std;
 #pragma once
@@ -28,7 +28,10 @@ public:
 	void static CopyFile (const char* src, const char* dest, const int flag);
 	bool static PathExist(const char* path);
 	string static GetFileDirPath(const char* filePath);
-	bool IsDirExist(const char* dirPath);
+	bool static IsDirExist(const char* dirPath);
+	bool static IsFileExist(const char * filePath);
+	string static FileUtil::GetFileName(const char * filePath);
+
 };
 
 
