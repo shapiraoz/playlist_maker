@@ -15,19 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FileUtil.h">
+    <ClInclude Include="Core\Amake.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\FileUtil.h">
       <Filter>Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Amake.h">
+    <ClInclude Include="Core\WplMake.h">
       <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Amake.cpp">
+    <ClCompile Include="Core\Amake.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="FileUtil.cpp">
+    <ClCompile Include="Utilities\FileUtil.cpp">
       <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\WplMake.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

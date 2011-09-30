@@ -24,9 +24,9 @@ void FileUtil::CopyFile (const char* src, const char* dest, const int flag)
 	bfs::copy_file(src,dest);
 }
 
-bool FileUtil::PathExist(const char* path)
+bool FileUtil::PathExist(const char* tpath)
 {
-	return bfs::exists(path);
+	return bfs::exists(tpath);
 }
 
 string FileUtil::GetFileDirPath(const char* filePath) 
@@ -37,7 +37,20 @@ string FileUtil::GetFileDirPath(const char* filePath)
 	else return p.root_path().string();
 }
 
-bool FileUtil::IsDirExist(const char* filePath)
+bool FileUtil::IsDirExist(const char* dirPath)
 {
-	return 1;
+	return (PathExist(dirPath) && bfs::is_directory(dirPath) );
+}
+
+bool FileUtil::IsFileExist(const char * filePath)
+{
+	if (!PathExist(filePath) ) return false;
+	bfs::path pFile(filePath);
+	return pFile.has_extension();
+}
+
+string FileUtil::GetFileName(const char * filePath)
+{
+	bfs::path pfile(filePath);
+	
 }
