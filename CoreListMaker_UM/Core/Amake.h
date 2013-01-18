@@ -15,7 +15,7 @@
 #define PASS 1
 #define FAIL 0
 
-using namespace std;
+
 class Amake
 {
 	
@@ -23,17 +23,19 @@ public:
 		Amake(void);
 		Amake(const char* filePath);
 		~Amake(void);
-		virtual bool CreateTragetFolder(const string path);
-		virtual bool CopyAllFile();
 		virtual bool ReadData() = 0 ;
+		virtual bool CreateTragetFolder(const std::string& path);
+		bool CopyAllFiles();
+	
 
 protected:
-	list<string> m_filelist; 
+	
+	std::list<std::string> m_filelist; 
 	int m_itemCnt;
-	string m_targerFolder;   
-	string m_filePath;
-	string m_srcFilePath;
-	string m_mainDirPath;
+	std::string m_targerFolder;   
+	std::string m_filePath;
+	std::string m_srcFilePath;
+	std::string m_mainDirPath;
 
 
 };

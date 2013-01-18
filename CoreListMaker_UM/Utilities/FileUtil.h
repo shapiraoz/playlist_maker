@@ -2,10 +2,11 @@
 #define FILE_UTIL_H
 #include <iostream>
 
-#ifdef WINDOWS 
+#ifdef _WIN32
 	#include <direct.h>
 	#define MkDir _mkdir
 	#define GetCurrentDir _getcwd
+
 #else
 	//#include <unistd.h>
 	#define MkDir mkdir
@@ -13,7 +14,7 @@
 #endif
 #define REWRITE 1
 
-using namespace std;
+
 #pragma once
 
 
@@ -27,10 +28,11 @@ public:
 
 	void static CopyFile (const char* src, const char* dest, const int flag);
 	bool static PathExist(const char* path);
-	string static GetFileDirPath(const char* filePath);
+	std::string static GetFileDirPath(const char* filePath);
 	bool static IsDirExist(const char* dirPath);
 	bool static IsFileExist(const char * filePath);
-	string static FileUtil::GetFileName(const char * filePath);
+	std::string static FileUtil::GetFileName(const char * filePath);
+	bool static CreateDir(const char* dirPath);
 
 };
 
