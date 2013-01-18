@@ -29,7 +29,7 @@ bool FileUtil::PathExist(const char* tpath)
 	return bfs::exists(tpath);
 }
 
-string FileUtil::GetFileDirPath(const char* filePath) 
+std::string FileUtil::GetFileDirPath(const char* filePath) 
 {
 	if (!PathExist(filePath)) throw "File Util Error : File not exist";
 	bfs::path  p(filePath);
@@ -49,8 +49,14 @@ bool FileUtil::IsFileExist(const char * filePath)
 	return pFile.has_extension();
 }
 
-string FileUtil::GetFileName(const char * filePath)
+std::string FileUtil::GetFileName(const char * filePath)
 {
-	bfs::path pfile(filePath);
-	
+	return bfs::path(filePath).stem().string();
+}
+
+bool FileUtil::CreateDir(const char* dirPath)
+{
+	if (IsDirExist(dirPath)) throw "Directory allready exist";
+	MkDir(dirPath);
+	return true;
 }

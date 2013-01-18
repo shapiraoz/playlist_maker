@@ -15,10 +15,16 @@ public:
 	WplMake(void);
 	WplMake(const char* filePath);
 	~WplMake(void);
-	
-	virtual bool ReadData(); 
+	virtual bool ReadData();
+	std::list<std::string>&  GetFilesList();
+		
+protected:
+	std::string CreateWorkSpace();	
+
 private:
-	pTreeLib::ptree m_ptree ; 
+	pTreeLib::ptree m_ptree ;
+	
+
 };
 
 
